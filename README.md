@@ -18,6 +18,8 @@
 - 🧩 **Built 100% in LWC** – no dependency on `lightning-datatable`
 - 🚀 **Fast, minimal, and clean** design for Quote creation flow
 
+---
+
 ## 📁 Folder Structure
 
 ```
@@ -29,35 +31,36 @@ quickqli-lite/
 └── LICENSE                # MIT License
 ```
 
-## 🔼 Want More Power: Pagination, Row Selection, Currency Formatting, and more?
-> 👉 [Buy the Pro Version on Gumroad](https://gumroad.com/yourproduct) for:
+---
 
-- 🔄 Persistent inline editing with real-time calculations
-- 📊 Sorting, filtering & pagination across full product datasets
-- 📊 Auto-calculation of total values per item (backend logic)
-- 💾 Server-side sync and auto-save draft state
-- 🛡️ Role-based visibility & permission control
+## 🔐 Want More Power?
+
+The **Pro Version** includes:
+- Live row & total calculations
+- Pagination (Next/Back)
+- Sorting with memory across pages
+- Advanced filtering and row selection via checkboxes
+- Right-aligned currency formatting based on locale
+- Enhanced UI polish
 - 💼 Enterprise-level support & integration service
 
-📩 Email us at **iryna.zasikan@gmail.com** for licensing, demos or questions.
+👉 [Buy QuickQLI Pro on Gumroad](https://gumroad.com/your-product) *(coming soon)*
 
-## 🚀 Installation
+---
 
-You can deploy using SFDX:
--If you're using the new sf CLI (recommended for all new projects), and you have a package.xml file inside your deployment/ folder, the best way to deploy is:
-```bash
-sf deploy project start --target-org <your-org-alias>
-```
-- If you want to deploy the full force-app source structure:
-```bash
-sf project deploy start --source-dir force-app --target-org <your-org-alias>
-```
-- Or if you want to do a dry run first:
-```bash
-sf project deploy preview --source-dir force-app --target-org <your-org-alias>
-```
+## 🛠 Installation (Lite)
+1. Unzip the code
+2. Deploy via Salesforce CLI or use Developer Console. Or use the metadata zip file in the `deployment/` folder with Salesforce Workbench.
+3. Add to your Lightning Page or Utility Bar
 
-Or use the metadata zip file in the `deployment/` folder with Salesforce Workbench.
+---
+
+## 📄 License
+This project is licensed under the MIT License.  
+**Author:** Iryna Zasikan  
+**Contact:** iryna.zasikan@gmail.com
+
+---
 
 ## 📸 Screenshots
 
