@@ -1,0 +1,20 @@
+
+# Node & general
+node_modules/
+package-lock.json
+.DS_Store
+*.log
+
+# Salesforce DX
+.sfdx/
+coverage/
+test-results/
+*.scratch-def.json
+
+# VSCode
+.vscode/
+.idea/
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
