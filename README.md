@@ -29,9 +29,8 @@ quickqli-lite/
 └── LICENSE                # MIT License
 ```
 
-## 🔼 Want More Power?
-
-Upgrade to **[Quick QLI Pro](https://your-link-here.com)** for:
+## 🔼 Want More Power: Pagination, Row Selection, Currency Formatting, and more?
+> 👉 [Buy the Pro Version on Gumroad](https://gumroad.com/yourproduct) for:
 
 - 🔄 Persistent inline editing with real-time calculations
 - 📊 Sorting, filtering & pagination across full product datasets
