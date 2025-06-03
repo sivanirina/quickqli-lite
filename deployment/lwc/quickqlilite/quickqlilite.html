@@ -1,0 +1,155 @@
+<template>
+    <lightning-card title="One-Page Quote Line Item Creator">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-m-around_medium">{error}</div>
+        </template>
+
+        <template if:true={showSuccess}>
+            <div class="slds-text-color_success slds-m-around_medium">Quote Line Items created!</div>
+        </template>
+
+        <template if:false={isLoading}>
+            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                <div class="slds-col">
+                    <lightning-input
+                        type="search"
+                        label="Search Product Name"
+                        value={searchTerm}
+                        onchange={handleSearchChange}
+                        placeholder="Search by product name...">
+                    </lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox
+                        label="Product Family"
+                        value={selectedFamily}
+                        options={familyOptions}
+                        onchange={handleFamilyChange}>
+                    </lightning-combobox>
+                </div>
+            </div>
+
+            <div class="slds-scrollable_x">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Product Code</th>
+                            <th>Family</th>
+                            <th>List Price ($)</th>
+                            <th>Unit Price ($)</th>
+                            <th>Quantity</th>
+                            <th>Discount (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={filteredItems} for:item="item">
+                            <tr key={item.pricebookEntryId}>
+                                <td>
+                                    <lightning-input
+                                        type="checkbox"
+                                        data-id={item.pricebookEntryId}
+                                        checked={item.selected}
+                                        onchange={handleSelect}>
+                                    </lightning-input>
+                                </td>
+                                <td>{item.productName}</td>
+                                <td>{item.productCode}</td>
+                                <td>{item.family}</td>
+                                <td>{item.listPrice}</td>
+                                <td>
+                                    <lightning-input
+                                        type="number"
+                                        data-id={item.pricebookEntryId}
+                                        data-field="unitPrice"
+                                        value={item.unitPrice}
+                                        step="any"
+                                        variant="label-hidden"
+                                        style="width: 90px;"
+                                        onblur={handleInput}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input
+                                        type="number"
+                                        data-id={item.pricebookEntryId}
+                                        data-field="quantity"
+                                        value={item.quantity}
+                                        step="any"
+                                        variant="label-hidden"
+                                        style="width: 90px;"
+                                        onblur={handleInput}>
+                                    </lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input
+                                        type="number"
+                                        data-id={item.pricebookEntryId}
+                                        data-field="discount"
+                                        value={item.discount}
+                                        step="any"
+                                        variant="label-hidden"
+                                        style="width: 90px;"
+                                        onblur={handleInput}>
+                                    </lightning-input>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+            <br/>
+            <div class="slds-m-left_small">
+            <lightning-button
+                variant="brand"    
+                label="Create Items"
+                onclick={handleCreate} >
+            </lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+
+    <template if:true={showPricebookModal}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title slds-text-heading_medium">Choose Price Book</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="slds-m-vertical_medium">
+                        <p>
+                            Select a price book for this quote. You can add products only from a single price book.
+                            Changing a selected price book will delete all existing products from this quote.
+                        </p>
+                    </div>
+                    <lightning-combobox
+                        label="Price Book"
+                        placeholder="Choose a Pricebook"
+                        options={pricebookOptions}
+                        value={selectedPricebook}
+                        onchange={handlePricebookChange}>
+                    </lightning-combobox>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        variant="neutral"
+                        label="Cancel"
+                        onclick={handleCancelPricebookModal}
+                        class="slds-m-right_small">
+                    </lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Save"
+                        onclick={handleSavePricebookModal}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
