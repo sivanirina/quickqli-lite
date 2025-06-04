@@ -44,7 +44,7 @@ The **Pro Version** includes:
 - Enhanced UI polish
 - 💼 Enterprise-level support & integration service
 
-👉 [Buy QuickQLI Pro on Gumroad](https://gumroad.com/your-product) *(coming soon)*
+👉 [Buy QuickQLI Pro on Gumroad](https://sivanirina.gumroad.com/l/quickqli)
 
 ---
 
