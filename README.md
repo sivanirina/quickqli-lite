@@ -35,34 +35,34 @@ quickqli-lite/
 
 ## 🔧 Key Development Features & Best Practices
 
-** ✅ Key Features **
-- Modular Apex Integration
+## ✅ Key Features
+- **Modular Apex Integration**
   Uses clearly separated Apex methods (getQuoteLineItems, createQuoteLineItems, assignPricebookToQuote) for data retrieval, creation, and quote updating logic.
-- Search & Filter Functionality
+- **Search & Filter Functionality**
   Provides real-time search and filtering of quote line items by product name and family, improving usability and focus.
-- Dynamic Item Management
+- **Dynamic Item Management**
   Allows inline editing of quantity, unit price, and discount fields with automatic tracking of changes.
-- Selective Item Creation
+- **Selective Item Creation**
   Users can select multiple products via checkboxes and create quote line items only from the filtered list of valid, user-modified entries.
-- Price Book Assignment Modal
+- **Price Book Assignment Modal**
   Automatically prompts the user to assign a Price Book if none is associated with the Quote. Includes a modal with Cancel and Save controls.
-- Toast Notifications
+- **Toast Notifications**
   Utilizes lightning/platformShowToastEvent for user feedback on successful operations.
-- Loading & Error State Management
+- **Loading & Error State Management**
   Clearly managed loading spinner and error messages ensure transparency during long or failed operations.
 
-** 🧠 Best Practices Followed **
-- Separation of Concerns
+## 🧠 Best Practices Followed
+- **Separation of Concerns**
   Business logic is delegated to Apex, keeping the LWC JavaScript focused on UI behavior and state management.
-- Track & Reactive State Management
+- **Track & Reactive State Management**
   Uses @track and reactive getters to ensure UI updates are triggered efficiently and responsively.
-- Data Validation & Defensive Coding
+- **Data Validation & Defensive Coding**
   Ensures items meet validation requirements (quantity > 0, unitPrice present, etc.) before proceeding with record creation.
-- Clean and Consistent Code Structure
+- **Clean and Consistent Code Structure**
   Well-structured functions and consistent variable naming enhance readability and maintainability.
-- Graceful Degradation
+- **Graceful Degradation**
   Includes fallback error messages and ensures the component can still function even if certain data (e.g. families) is missing.
-- UX-Oriented Enhancements
+- **UX-Oriented Enhancements**
   Includes conveniences like auto-close modals, delayed refresh, and conditional prompts to guide the user flow intuitively.
 
 ---
